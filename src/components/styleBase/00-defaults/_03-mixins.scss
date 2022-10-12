@@ -1,0 +1,205 @@
+/*
+ * General Mixins (put specific ones in component files where applicable)
+*/
+
+/* Mixin - Clearfix.
+ * Adds clearfix based on http://bourbon.io/docs/#clearfix
+ * use example =   @include cleafix
+*/
+
+@mixin body-copy {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin font-awesome {
+  font-weight: 900;
+  font-family: $font-icon;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+}
+
+$outer-container-break: $medium;
+
+/// Mixin - Wrapper
+/// Outer container mixin for large screens
+@mixin wrapper(
+  $container-max-width: $max-width,
+  $outer-container-break: $medium,
+  $v-margin: 0,
+  $v-padding: 0,
+  $h-padding: $space-4,
+  $h-padding-large: $h-padding
+) {
+  max-width: #{$container-max-width};
+  width: 100%;
+  margin: #{$v-margin} auto;
+  padding: #{$v-padding} #{$h-padding};
+
+  @include breakpoint($outer-container-break) {
+    padding: #{$v-padding} #{$h-padding-large};
+  }
+
+  @include breakpoint($container-max-width) {
+    padding-left: calc(
+      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+    );
+    padding-right: calc(
+      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+    );
+  }
+}
+
+// Layout content max width
+@mixin layout-max-width {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
+}
+
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin grid {
+  display: grid;
+  grid-gap: $space-8;
+
+  &--2 {
+    grid-template-columns: 1fr;
+
+    @include medium {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+
+  &--3 {
+    grid-template-columns: 1fr;
+
+    @include medium {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--4 {
+    grid-template-columns: 1fr;
+
+    @include medium {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &--5 {
+    grid-template-columns: 1fr;
+
+    @include medium {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &--6 {
+    grid-template-columns: 1fr;
+
+    @include medium {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &--card {
+    @include space-stack-page;
+  }
+
+  &--separator {
+    .grid__item {
+      position: relative;
+
+      @include medium {
+        &::after {
+          content: "";
+          width: 1px;
+          height: 100%;
+          background-color: lightgray;
+          position: absolute;
+          top: 0;
+          right: -1rem;
+        }
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &--custom {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .5rem;
+
+    @include medium {
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 1.5rem;
+    }
+
+    .grid__item {
+      &:nth-child(1) {
+        @include medium {
+          grid-column: 1 / 5;
+        }
+      }
+
+      &:nth-child(2) {
+        @include medium {
+          grid-column: 5 / 10;
+        }
+      }
+
+      &:nth-child(3) {
+        @include medium {
+          grid-column: 10 / 13;
+        }
+      }
+
+      &:nth-child(4) {
+        @include medium {
+          grid-column: 1 / 4;
+        }
+      }
+
+      &:nth-child(5) {
+        @include medium {
+          grid-column: 4 / 9;
+        }
+      }
+
+      &:nth-child(6) {
+        @include medium {
+          grid-column: 13 / 9;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,322 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: clr(background);
+  color: clr(text);
+
+  --main-page-color: var(--c-administracion-500);
+
+  @include body-copy;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.main {
+  display: block; /* Fix for IE weirdness */
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+// Utility classes
+.md-block {
+  @include medium {
+    display: block;
+  }
+}
+
+.md-hidden {
+  @include medium {
+    display: none;
+  }
+}
+
+body {
+  &.color-yellow {
+    --main-page-color: var(--c-cienciashum-500);
+  }
+
+  &.color-orange {
+    --main-page-color: var(--c-economia-500);
+  }
+
+  &.color-darkblue {
+    --main-page-color: var(--c-blue-500);
+  }
+
+  &.color-lightblue {
+    --main-page-color: var(--c-jurisprudencia-500);
+  }
+
+  &.color-green {
+    --main-page-color: var(--c-cienciasnat-500);
+  }
+
+  &.color-fucsia {
+    --main-page-color: var(--c-estudiosint-500);
+  }
+
+  &.color-darkgreen {
+    --main-page-color: var(--c-cienciasnat-500);
+  }
+
+  &.color-redwine {
+    --main-page-color: var(--c-estudiosint-500);
+  }
+
+  &.color-black {
+    --main-page-color: black;
+  }
+
+  &.color-white {
+    --main-page-color: white;
+  }
+
+  &.color-gray-light {
+    --main-page-color: #e6e6e6;
+  }
+
+  &.color-gray {
+    --main-page-color: #dadae5;
+  }
+
+  &.color-red {
+    --main-page-color: #DA0921;
+  }
+
+  &.color-purple {
+    --main-page-color: #3100A0;
+  }
+
+  &.color-blue {
+    --main-page-color: #00006d;
+  }
+
+  &.color-lila {
+    --main-page-color: #dadae5;
+  }
+
+  &.color-blue-navy {
+    --main-page-color: #18294C;
+  }
+
+  &.color-cyan {
+    --main-page-color: #409CF7;
+  }
+
+  &.color-administracion {
+    --main-page-color: #DA0921;
+  }
+
+  &.color-medicina {
+    --main-page-color: #03C;
+  }
+
+  &.color-cienciasnat {
+    --main-page-color: #98D90B;
+  }
+
+  &.color-jurisprudencia {
+    --main-page-color: #00A0A0;
+  }
+
+  &.color-estudiosint {
+    --main-page-color: #A51458;
+  }
+
+  &.color-economia {
+    --main-page-color: #E8670C;
+  }
+
+  &.color-creacion {
+    --main-page-color: #FF785A;
+  }
+
+  &.color-ingenieria {
+    --main-page-color: #00926E;
+  }
+
+  &.color-cienciashum {
+    --main-page-color: #F4BA06;
+  }
+}
+
+.bgc-white {
+  .layout-content {
+    background: $white;
+  }
+}
+
+.bgc-yellow {
+  .layout-content {
+    background: var(--c-cienciashum-500);
+  }
+}
+
+.bgc-orange {
+  .layout-content {
+    background: var(--c-economia-500);
+  }
+}
+
+.bgc-darkblue {
+  .layout-content {
+    background: var(--c-blue-500);
+  }
+}
+
+.bgc-lightblue {
+  .layout-content {
+    background: var(--c-jurisprudencia-500);
+  }
+}
+
+.bgc-green {
+  .layout-content {
+    background: var(--c-cienciasnat-500);
+  }
+}
+
+.bgc-fucsia {
+  .layout-content {
+    background: var(--c-estudiosint-500);
+  }
+}
+
+.bgc-darkgreen {
+  .layout-content {
+    background: var(--c-cienciasnat-500);
+  }
+}
+
+.bgc-redwine {
+  .layout-content {
+    background: var(--c-estudiosint-500);
+  }
+}
+
+.bgc-black {
+  .layout-content {
+    background: black;
+  }
+}
+
+.bgc-white {
+  .layout-content {
+    background: white;
+  }
+}
+
+.bgc-gray-light {
+  .layout-content {
+    background: #e6e6e6;
+  }
+}
+
+.bgc-gray {
+  .layout-content {
+    background: #dadae5;
+  }
+}
+
+.bgc-red {
+  .layout-content {
+    background: #DA0921;
+  }
+}
+
+.bgc-purple {
+  .layout-content {
+    background: #3100A0;
+  }
+}
+
+.bgc-blue {
+  .layout-content {
+    background: #00006d;
+  }
+}
+
+.bgc-lila {
+  .layout-content {
+    background: #dadae5;
+  }
+}
+
+.bgc-blue-navy {
+  .layout-content {
+    background: #18294C;
+  }
+}
+
+.bgc-cyan {
+  .layout-content {
+    background: #409CF7;
+  }
+}
+
+.bgc-administracion {
+  .layout-content {
+    background: #DA0921;
+  }
+}
+
+.bgc-medicina {
+  .layout-content {
+    background: #03C;
+  }
+}
+
+.bgc-cienciasnat {
+  .layout-content {
+    background: #98D90B;
+  }
+}
+
+.bgc-jurisprudencia {
+  .layout-content {
+    background: #00A0A0;
+  }
+}
+
+.bgc-estudiosint {
+  .layout-content {
+    background: #A51458;
+  }
+}
+
+.bgc-economia {
+  .layout-content {
+    background: #E8670C;
+  }
+}
+
+.bgc-creacion {
+  .layout-content {
+    background: #FF785A;
+  }
+}
+
+.bgc-ingenieria {
+  .layout-content {
+    background: #1C6EE5;
+  }
+}
+
+.bgc-cienciashum {
+  .layout-content {
+    background: #F4BA06;
+  }
+}

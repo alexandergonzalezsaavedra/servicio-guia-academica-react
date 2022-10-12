@@ -1,0 +1,250 @@
+@use 'colors-vars';
+
+$grayscaleColors: (
+  gray-50: colors-vars.$gray-50,
+  gray-100: colors-vars.$gray-100,
+  gray-200: colors-vars.$gray-200,
+  gray-300: colors-vars.$gray-300,
+  gray-400: colors-vars.$gray-400,
+  gray-500: colors-vars.$gray-500,
+  gray-600: colors-vars.$gray-600,
+  gray-700: colors-vars.$gray-700,
+  gray-800: colors-vars.$gray-800,
+  gray-900: colors-vars.$gray-900,
+);
+
+$purplescaleColors: (
+  purple-50: colors-vars.$purple-50,
+  purple-100: colors-vars.$purple-100,
+  purple-200: colors-vars.$purple-200,
+  purple-300: colors-vars.$purple-300,
+  purple-400: colors-vars.$purple-400,
+  purple-500: colors-vars.$purple-500,
+  purple-600: colors-vars.$purple-600,
+  purple-700: colors-vars.$purple-700,
+  purple-800: colors-vars.$purple-800,
+  purple-900: colors-vars.$purple-900,
+);
+
+$redscaleColors: (
+  red-50: colors-vars.$red-50,
+  red-100: colors-vars.$red-100,
+  red-200: colors-vars.$red-200,
+  red-300: colors-vars.$red-300,
+  red-400: colors-vars.$red-400,
+  red-500: colors-vars.$red-500,
+  red-600: colors-vars.$red-600,
+  red-700: colors-vars.$red-700,
+  red-800: colors-vars.$red-800,
+  red-900: colors-vars.$red-900,
+);
+
+$bluescaleColors: (
+  blue-50: colors-vars.$blue-50,
+  blue-100: colors-vars.$blue-100,
+  blue-200: colors-vars.$blue-200,
+  blue-300: colors-vars.$blue-300,
+  blue-400: colors-vars.$blue-400,
+  blue-500: colors-vars.$blue-500,
+  blue-600: colors-vars.$blue-600,
+  blue-700: colors-vars.$blue-700,
+  blue-800: colors-vars.$blue-800,
+  blue-900: colors-vars.$blue-900,
+);
+
+$administracionColors: (
+  administracion-500: colors-vars.$red-500,
+);
+
+$medicinaColors: (
+  medicina-500: colors-vars.$sapphire,
+);
+
+$cienciasnatColors: (
+  cienciasnat-500: colors-vars.$bryopsida-green,
+);
+
+$jurisprudenciaColors: (
+  jurisprudencia-500: colors-vars.$pleasant,
+);
+
+$estudiosintColors: (
+  estudiosint-500: colors-vars.$plum,
+);
+
+$economiaColors: (
+  economia-500: colors-vars.$epicurean-orange,
+);
+
+$creacionColors: (
+  creacion-500: colors-vars.$peachy-pinky,
+);
+
+$ingenieriaColors: (
+  ingenieria-500: colors-vars.$green-ing,
+);
+
+$cienciashumColors: (
+  cienciashum-500: colors-vars.$citra,
+);
+
+$gsbColors: (
+  gsb-light: colors-vars.$mortar-gray,
+  gsb-dark: colors-vars.$lead,
+);
+
+$defaultColors: (
+  text: colors-vars.$gray-700,
+  text-inverse: colors-vars.$white,
+  background: colors-vars.$white,
+  background-section: colors-vars.$gray-100,
+  bg-gray: colors-vars.$gray-500,
+  primary: colors-vars.$red,
+  secondary: colors-vars.$purple,
+  tertiary: colors-vars.$blue,
+  accent: colors-vars.$gray-600,
+  accent-high: colors-vars.$black,
+  highlight: colors-vars.$gray-200,
+  highlight-high: colors-vars.$gray-100,
+  border: colors-vars.$gray-100,
+  muted: colors-vars.$white,
+  administracion: colors-vars.$red,
+  medicina: colors-vars.$sapphire,
+  ciencias-nat: colors-vars.$bryopsida-green,
+  jurisprudencia: colors-vars.$pleasant,
+  estudios-int: colors-vars.$plum,
+  economia: colors-vars.$epicurean-orange,
+  creacion: colors-vars.$peachy-pinky,
+  ingenieria: colors-vars.$flickr-blue,
+  ciencias-humanas: colors-vars.$citra,
+  lightur: colors-vars.$lightur,
+  gsb-light: colors-vars.$mortar-gray,
+  gsb-dark: colors-vars.$lead,
+  warning: colors-vars.$notification-warning,
+  error: colors-vars.$notification-error,
+  success: colors-vars.$notification-success,
+  info: colors-vars.$notification-info,
+);
+
+///////////
+// Usage //
+///////////
+// This color function makes it easy for you to call a color by it's functional
+// name anywhere you need.
+// E.g. to use the `text` color, you type: `color: clr(text);`
+//
+// How it works:
+// This function works in conjunction with the dynamic css custom properties
+// declarations below. The item called in the function is prefixed with
+// `var(--c-` to call the custom property for that color.
+// E.g. `color: clr(text);` will return `color: var(--c-text);`
+// Note: (The `--c-` is added via the `@each` loops below)
+@function clr($colorChoice) {
+  @return var(--c-#{$colorChoice});
+}
+
+// Create CSS custom properties
+// This is what powers the built-in OS light/dark mode switching.
+// For each color variable above (e.g. `text` and `background`) a css custom
+// property will be created. (e.g. `--c-text:` and `--c-background:`).
+//
+// The first `@each` below will create a custom property for each item in the
+// `$defaultColors` map. So put all of your default colors there.
+//
+// The `prefers-color-scheme: dark` media query below will then create custom
+// properties for each of the colors in the `$darkColors` map only if the
+// browser supports that feature. If there is an exact match (e.g. `text`) in
+// both maps, the one from `$darkColors` will be used on machines that have
+// opted to use the 'dark mode' on their OS.
+:root {
+  // Create custom properties for gray colors
+  @each $name,
+  $color in $grayscaleColors {
+    --c-#{$name}: #{$color};
+  }
+  // Create custom properties for primary colors
+  @each $name,
+  $color in $redscaleColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for secondary colors
+  @each $name,
+  $color in $purplescaleColors {
+    --c-#{$name}: #{$color};
+  }
+
+
+  // Create custom properties for tertiary colors
+  @each $name,
+  $color in $bluescaleColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $administracionColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $medicinaColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $cienciasnatColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $jurisprudenciaColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $estudiosintColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $economiaColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $creacionColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $ingenieriaColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $cienciashumColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for faculty colors
+  @each $name,
+  $color in $gsbColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Create custom properties for default colors
+  @each $name,
+  $color in $defaultColors {
+    --c-#{$name}: #{$color};
+  }
+
+}

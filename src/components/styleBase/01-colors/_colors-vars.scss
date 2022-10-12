@@ -1,0 +1,79 @@
+// Color variables - it is better to use the colors in
+// components/00-base/01-colors/_01-colors-used.scss rather than
+// these colors directly.
+
+// Black & White
+$white: #FFF;
+$black: #000;
+
+// Gray colors
+$gray-50: #F5F5F5;
+$gray-100: #e6e6e6;
+$gray-200: #afafaf;
+$gray-300: #888;
+$gray-400: #666;
+$gray-500: #666;
+$gray-600: #4e4d4d;
+$gray-700: #333;
+$gray-800: #222;
+$gray-900: #111;
+
+// Notification colors
+$notification-info: #06748C;
+$notification-success: rgba(139, 215, 42, 0.4);
+$notification-error: rgba(231, 0, 0, 0.4);
+$notification-warning: rgba(255, 103, 0, 0.4);
+
+// Primary Colors
+$red: #DA0921; //red
+$purple: #3100A0; //purple
+$blue: #00006d; // blue
+
+// Secondary Colors
+$sapphire: #03C; // indigo
+$bryopsida-green: #98D90B; // lime
+$pleasant: #00A0A0; // teal
+$plum: #A51458; // pink
+$epicurean-orange: #E8670C; // orange
+$peachy-pinky: #FF785A; // rose
+$flickr-blue: #1C6EE5; // sky
+$citra: #F4BA06; // yellow
+$mortar-gray: #9F9E9D;
+$lead: #202020;
+$lightur: #dbdbe4;
+$blue-navy: #18294C;
+$green-ing: #23926e;
+
+$red-50: #FF9FB7;
+$red-100: #FF8199;
+$red-200: #FF627A;
+$red-300: #FE455D;
+$red-400: #F9273F;
+$red-500: $red;
+$red-600: #BB0202;
+$red-700: #9E0201;
+$red-800: #800001;
+$red-900: #610000;
+
+$purple-50: #C696FE;
+$purple-100: #A979FF;
+$purple-200: #8B5AF9;
+$purple-300: #6D3BDC;
+$purple-400: #501EBE;
+$purple-500: $purple;
+$purple-600: #120081;
+$purple-700: #010064;
+$purple-800: #010046;
+$purple-900: #000028;
+$purple-1000: #18294b;
+
+$blue-50: #9696FF;
+$blue-100: #7878E5;
+$blue-200: #5A5AC6;
+$blue-300: #2e3180;
+$blue-400: #1b142d;
+$blue-500: $blue;
+$blue-600: #01004E;
+$blue-700: #000031;
+$blue-800: #000014;
+$blue-900: #000;

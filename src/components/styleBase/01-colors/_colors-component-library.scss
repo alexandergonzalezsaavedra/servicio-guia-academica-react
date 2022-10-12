@@ -1,0 +1,224 @@
+@use 'colors-used'as *;
+
+// These styles only affect the colors "Usage" page in the component library
+.cl-colors {
+  padding: 1rem;
+}
+
+.cl-colors__list {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  column-gap: 1rem;
+}
+
+.cl-colors__scale-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.cl-colors__name {
+  width: 5rem;
+
+  &:first-child {
+    width: 10rem;
+  }
+}
+
+.cl-colors__color {
+  height: 2.5rem;
+  width: 100%;
+}
+
+.cl-colors__info {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+// Dynamically set swatch text color based on the lightness of the background color
+@function set-color(
+  $color,
+  $text-primary: text,
+  $text-secondary: text-inverse) {
+  @if (lightness($color) > 50) {
+    @return clr($text-primary);
+  }
+
+  @else {
+    @return clr($text-secondary);
+  }
+}
+
+// Style default color swatches
+@each $name,
+$color in $grayscaleColors {
+  .cl-colors__color {
+    &--#{$name} {
+    background-color: clr($name);
+    color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $purplescaleColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $bluescaleColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $redscaleColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $administracionColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $medicinaColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $cienciasnatColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $jurisprudenciaColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $estudiosintColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $administracionColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $economiaColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $creacionColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $administracionColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $ingenieriaColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $cienciashumColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $gsbColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}
+
+@each $name,
+$color in $defaultColors {
+  .cl-colors__color {
+    &--#{$name} {
+      background-color: clr($name);
+      color: set-color($color);
+    }
+  }
+}

@@ -1,0 +1,394 @@
+// Container
+.container {
+  width: 100%;
+}
+
+.container-sm {
+  max-width: 768px;
+}
+
+.container-default {
+  max-width: 1280px;
+}
+
+.container-lg {
+  max-width: 1400px;
+}
+
+// Background Color
+.bg-black {
+  background-color: black;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-gray-light {
+  background-color: #e6e6e6;
+}
+
+.bg-gray {
+  background-color: #dadae5;
+}
+
+.bg-gray-white {
+  background-image: linear-gradient(90deg, #dadae5 50%, #dadae5 50%);
+  padding: 1.5rem 0;
+
+  @include large {
+    background-image: linear-gradient(90deg, #dadae5 50%, #fff 50%);
+    padding: 3rem 0;
+  }
+}
+
+.bg-white-gray {
+  background-image: linear-gradient(90deg, #fff 50%, #fff 50%);
+  padding: 1.5rem 0;
+
+  @include large {
+    background-image: linear-gradient(90deg, #fff 50%, #f0f0f5 50%);
+    padding: 3rem 0;
+  }
+}
+
+.bg-gray-gray-light {
+  background-image: linear-gradient(90deg, #fff 50%, #fff 50%);
+  padding: 1.5rem 0;
+
+  @include large {
+    background-image: linear-gradient(90deg, #dadae5 50%, #f0f0f5 50%);
+    padding: 3rem 0;
+  }
+}
+
+.bg-gray-light-gray {
+  background-image: linear-gradient(90deg, #fff 50%, #fff 50%);
+  padding: 1.5rem 0;
+
+  @include large {
+    background-image: linear-gradient(90deg, #f0f0f5 50%, #dadae5 50%);
+    padding: 3rem 0;
+  }
+}
+
+.bg-gray-extra-light {
+  background-color: #F3F3F3 !important;
+}
+
+.bg-red {
+  background-color: #DA0921 !important;
+}
+
+.bg-purple {
+  background-color: #3100A0 !important;
+}
+
+.bg-blue {
+  background-color: #00006d !important;
+}
+
+.bg-blue-light {
+  background-color: #2d2f7b !important;
+}
+
+.bg-lila {
+  background-color: #dadae5 !important;
+}
+
+.bg-light-lila {
+  background-color: #e8e8f5 !important;
+}
+
+.bg-blue-navy {
+  background-color: #18294C !important;
+}
+
+.bg-cyan {
+  background-color: #409CF7 !important;
+}
+
+.bg-administracion {
+  background-color: #DA0921 !important;
+}
+
+.bg-medicina {
+  background-color: #03C !important;
+}
+
+.bg-cienciasnat {
+  background-color: #69971a !important;
+}
+
+.bg-jurisprudencia {
+  background-color: #00A0A0 !important;
+}
+
+.bg-estudiosint {
+  background-color: #A51458 !important;
+}
+
+.bg-economia {
+  background-color: #E8670C !important;
+}
+
+.bg-creacion {
+  background-color: #FF785A !important;
+}
+
+.bg-ingenieria {
+  background-color: #00926e !important;
+}
+
+.bg-cienciashum {
+  background-color: #F4BA06 !important;
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(to bottom, rgba(27, 20, 45, 1) 43%, rgba(28, 21, 48, 1) 45%, rgba(46, 49, 128, 1) 100%) !important;
+}
+
+.bg-green-gradient {
+  background: linear-gradient(90deg, #97b517 0%, #017f4d 80%) !important;
+}
+
+.bg-purple-gradient {
+  background: linear-gradient(90deg, #6d246f 0%, #562367 94%) !important;
+}
+
+@include medium {
+  .md\:bg-black {
+      background-color: black;
+    }
+
+  .md\:bg-white {
+    background-color: white;
+  }
+
+  .md\:bg-gray-light {
+    background-color: #e6e6e6;
+  }
+
+  .md\:bg-gray {
+    background-color: #dadae5;
+  }
+
+  .md\:bg-gray-white {
+    background-image: linear-gradient(90deg, #dadae5 50%, #dadae5 50%);
+    padding: 1.5rem 0;
+
+    @include large {
+      background-image: linear-gradient(90deg, #dadae5 50%, #fff 50%);
+      padding: 3rem 0;
+    }
+  }
+
+  .md\:bg-white-gray {
+    background-image: linear-gradient(90deg, #fff 50%, #fff 50%);
+    padding: 1.5rem 0;
+
+    @include large {
+      background-image: linear-gradient(90deg, #fff 50%, #f0f0f5 50%);
+      padding: 3rem 0;
+    }
+  }
+
+  .md\:bg-gray-gray-light {
+    background-image: linear-gradient(90deg, #fff 50%, #fff 50%);
+    padding: 1.5rem 0;
+
+    @include large {
+      background-image: linear-gradient(90deg, #dadae5 50%, #f0f0f5 50%);
+      padding: 3rem 0;
+    }
+  }
+
+  .md\:bg-gray-light-gray {
+    background-image: linear-gradient(90deg, #fff 50%, #fff 50%);
+    padding: 1.5rem 0;
+
+    @include large {
+      background-image: linear-gradient(90deg, #f0f0f5 50%, #dadae5 50%);
+      padding: 3rem 0;
+    }
+  }
+
+  .md\:bg-gray-extra-light {
+    background-color: #F3F3F3 !important;
+  }
+
+  .md\:bg-red {
+    background-color: #DA0921 !important;
+  }
+
+  .md\:bg-purple {
+    background-color: #3100A0 !important;
+  }
+
+  .md\:bg-blue {
+    background-color: #00006d !important;
+  }
+
+  .md\:bg-lila {
+    background-color: #dadae5 !important;
+  }
+
+  .md\:bg-light-lila {
+    background-color: #e8e8f5 !important;
+  }
+
+  .md\:bg-blue-navy {
+    background-color: #18294C !important;
+  }
+
+  .md\:bg-cyan {
+    background-color: #409CF7 !important;
+  }
+
+  .md\:bg-administracion {
+    background-color: #DA0921 !important;
+  }
+
+  .md\:bg-medicina {
+    background-color: #03C !important;
+  }
+
+  .md\:bg-cienciasnat {
+    background-color: #69971a !important;
+  }
+
+  .md\:bg-jurisprudencia {
+    background-color: #00A0A0 !important;
+  }
+
+  .md\:bg-estudiosint {
+    background-color: #A51458 !important;
+  }
+
+  .md\:bg-economia {
+    background-color: #E8670C !important;
+  }
+
+  .md\:bg-creacion {
+    background-color: #FF785A !important;
+  }
+
+  .md\:bg-ingenieria {
+    background-color: #00926e !important;
+  }
+
+  .md\:bg-cienciashum {
+    background-color: #F4BA06 !important;
+  }
+
+  .md\:bg-blue-gradient {
+    background: linear-gradient(to bottom, rgba(27, 20, 45, 1) 43%, rgba(28, 21, 48, 1) 45%, rgba(46, 49, 128, 1) 100%) !important;
+  }
+  .md\:bg-green-gradient {
+    background: linear-gradient(90deg, #97b517 0%, #017f4d 80%) !important;
+  }
+
+  .md\:bg-purple-gradient {
+    background: linear-gradient(90deg, #6d246f 0%, #562367 94%) !important;
+  }
+}
+
+
+// Text Color
+.text-inherit {
+  color: inherit;
+}
+.text-current {
+  color: currentColor;
+}
+.text-transparent {
+  color: transparent;
+}
+.text-black {
+  color: black;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-gray-light {
+  color: #e6e6e6;
+}
+
+.text-gray {
+  color: #dadae5 !important;
+}
+
+.text-red {
+  color: #DA0921!important;
+}
+
+.text-purple {
+  color: #3100A0!important;
+}
+
+.text-blue {
+  color: #00006d!important;
+}
+
+.text-lila {
+  color: #dadae5!important;
+}
+
+.text-blue-navy {
+  color: #18294C!important;
+}
+
+.text-cyan {
+  color: #409CF7!important;
+}
+
+.text-administracion {
+  color: #DA0921!important;
+}
+
+.text-medicina {
+  color: #03C!important;
+}
+
+.text-cienciasnat {
+  color: #98D90B!important;
+}
+
+.text-jurisprudencia {
+  color: #00A0A0!important;
+}
+
+.text-estudiosint {
+  color: #A51458!important;
+}
+
+.text-economia {
+  color: #E8670C!important;
+}
+
+.text-creacion {
+  color: #FF785A!important;
+}
+
+.text-ingenieria {
+  color: #00926e!important;
+}
+
+.text-cienciashum {
+  color: #F4BA06!important;
+}
+
+.block--image {
+  &.border-white {
+    img {
+      border-width: 1px;
+      padding: 0.5rem;
+      border-style: solid;
+      border-color: white;
+      display: inline-block;
+    }
+  }
+}
+
