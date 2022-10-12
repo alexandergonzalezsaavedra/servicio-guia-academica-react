@@ -36,6 +36,19 @@ const PrintDataStudent = ({ dataStudent, datosAcademicos }) => {
                     }
                 })()
             }
+            {
+                datosAcademicos.map((item, index) => {
+                    let { codPlan, nombrePlan, codFacultad, nombreFacultad } = item
+                    return (
+                        <ul key={index}>
+                            <li>{codPlan}</li>
+                            <li>{nombrePlan}</li>
+                            <li>{codFacultad}</li>
+                            <li>{nombreFacultad}</li>
+                        </ul>
+                    )
+                })
+            }
         </>
     )
 }
