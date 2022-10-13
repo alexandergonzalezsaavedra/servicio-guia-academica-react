@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react'
-
 const InfoStudent = ({ dataToken, estudiante, setDataStudent, setDatosAcademicos }) => {
-
-
-
     useEffect(() => {
         obtenerDatosEstudiante(dataToken)
     }, [dataToken])
-
-
     const obtenerDatosEstudiante = async (dataToken) => {
         try {
             if (estudiante.length === 0) {
@@ -36,12 +30,9 @@ const InfoStudent = ({ dataToken, estudiante, setDataStudent, setDatosAcademicos
             console.log('fin de carga')
         }
     };
-
     return (
-        <div>
-
-        </div>
+        <>
+        </>
     )
 }
-
 export default InfoStudent

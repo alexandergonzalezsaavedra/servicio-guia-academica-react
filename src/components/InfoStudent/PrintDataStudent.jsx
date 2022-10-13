@@ -1,25 +1,30 @@
-import React from 'react'
-
-const PrintDataStudent = ({ dataStudent, datosAcademicos }) => {
-
-    console.log(dataStudent)
-    console.log(datosAcademicos)
+const PrintDataStudent = ({ dataStudent, datosAcademicos, setCodPlan }) => {
     let { nombreCompleto, nivelEstudio, codPeriodo } = dataStudent
+
     return (
         <>
-            <ul>
-                <li>{nombreCompleto}</li>
-                <li>{nivelEstudio}</li>
-                <li>{codPeriodo}</li>
-                <li></li>
-            </ul>
+            {
+                (() => {
+                    if (dataStudent.length != 0) {
+                        return (
+                            <div className='flex justify-center my-4'>
+                                <div className='border p-2 w-1/2'>
+                                    <h3>{nombreCompleto}</h3>
+                                    <small>{nivelEstudio}</small>
+                                    <p>{codPeriodo}</p>
+                                </div>
+                            </div>
+                        )
+                    }
+                })()
+            }
             {
                 (() => {
                     if (datosAcademicos.length === 1) {
                         return (
                             <div>
                                 <hr />
-                                <h3 className='text-pink'>
+                                <h3 className='text-pink text-3xl text-center my-3'>
                                     Programa Cursado
                                 </h3>
                             </div>
@@ -28,7 +33,7 @@ const PrintDataStudent = ({ dataStudent, datosAcademicos }) => {
                         return (
                             <div>
                                 <hr />
-                                <h3 className='text-purple'>
+                                <h3 className='text-purple text-3xl text-center my-3'>
                                     Programas Cursados
                                 </h3>
                             </div>
@@ -36,21 +41,52 @@ const PrintDataStudent = ({ dataStudent, datosAcademicos }) => {
                     }
                 })()
             }
+
             {
-                datosAcademicos.map((item, index) => {
-                    let { codPlan, nombrePlan, codFacultad, nombreFacultad } = item
-                    return (
-                        <ul key={index}>
-                            <li>{codPlan}</li>
-                            <li>{nombrePlan}</li>
-                            <li>{codFacultad}</li>
-                            <li>{nombreFacultad}</li>
-                        </ul>
-                    )
-                })
+                (() => {
+                    if (dataStudent.length != 0) {
+                        return (
+                            <div className='flex justify-center gap-4'>
+                                <h3>
+                                    Selecciones el programa para ver la información
+                                </h3>
+                                <form action="">
+                                    {
+                                        datosAcademicos.map((item, index) => {
+                                            let { codPlan, nombrePlan, codFacultad, nombreFacultad } = item
+                                            return (
+                                                <div key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        className="btn-check"
+                                                        name="options-outlined"
+                                                        id={codPlan}
+                                                        autoComplete="off"
+                                                        onClick={() => {
+                                                            setCodPlan(codPlan)
+                                                        }}
+                                                    />
+                                                    <label
+                                                        className="btn btn-outline-success"
+                                                        htmlFor={codPlan}
+                                                    >
+                                                        {nombrePlan}
+                                                    </label>
+                                                </div>
+
+                                            )
+                                        })
+                                    }
+                                </form>
+                            </div>
+                        )
+                    }
+                })()
             }
+
+
+
         </>
     )
 }
-
 export default PrintDataStudent

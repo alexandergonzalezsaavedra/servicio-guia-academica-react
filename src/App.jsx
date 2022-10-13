@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import FormLogin from './components/FormLogin/FormLogin';
 import InfoStudent from './components/InfoStudent/InfoStudent';
+import PintarPlanEstudios from './components/InfoStudent/PintarPlanEstudios';
+import PlanEstudio from './components/InfoStudent/PlanEstudio';
 import PrintDataStudent from './components/InfoStudent/PrintDataStudent';
 function App() {
 
@@ -12,6 +14,9 @@ function App() {
   const [dataToken, setDataToken] = useState('')
   const [dataStudent, setDataStudent] = useState([])
   const [datosAcademicos, setDatosAcademicos] = useState([])
+  const [codPlan, setCodPlan] = useState('')
+  let [datosPlanDeEstudio, setDatosPlanDeEstudio] = useState()
+  const [dataSemestres, setDataSemestres] = useState()
 
   const obtenerToken = async (estudiante) => {
     try {
@@ -40,23 +45,43 @@ function App() {
     }
   };
 
+
+
   return (
     <>
-      <div className='container mx-auto py-3'>
+      <div className='container mx-auto pt-3'>
         <h3 className="text-3xl font-bold text-sm text-blue-50 mb-5 text-center">
           Consumo servicio - guia academica
         </h3>
         <div id='formularioIngreso'>
           <FormLogin setEstudiante={setEstudiante} />
-          <InfoStudent
-            dataToken={dataToken}
-            estudiante={estudiante}
-            setDataStudent={setDataStudent}
-            setDatosAcademicos={setDatosAcademicos}
-          />
-          <PrintDataStudent
-            dataStudent={dataStudent}
-            datosAcademicos={datosAcademicos}
+        </div>
+        <InfoStudent
+          dataToken={dataToken}
+          estudiante={estudiante}
+          setDataStudent={setDataStudent}
+          setDatosAcademicos={setDatosAcademicos}
+
+        />
+        <PrintDataStudent
+          dataStudent={dataStudent}
+          datosAcademicos={datosAcademicos}
+          setCodPlan={setCodPlan}
+        />
+        <PlanEstudio
+          estudiante={estudiante}
+          dataToken={dataToken}
+          datosAcademicos={datosAcademicos}
+          codPlan={codPlan}
+          setDatosPlanDeEstudio={setDatosPlanDeEstudio}
+          setDataSemestres={setDataSemestres}
+        />
+      </div>
+      <div className='px-1 pb-5 py-1'>
+        <div id='planEstudios'>
+          <PintarPlanEstudios
+            dataSemestres={dataSemestres}
+            codPlan={codPlan}
           />
         </div>
       </div>
